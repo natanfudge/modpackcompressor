@@ -1,0 +1,34 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.61'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'Fabric'
+        url = 'http://maven.modmuss50.me/'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'log4j:log4j:1.2.17'
+    implementation 'org.apache.logging.log4j:log4j-api:2.12.1'
+//    implementation 'org.sat4j:org.sat4j.core:2.3.1'
+    implementation 'net.fabricmc:fabric-loader-sat4j:2.3.5.4'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.12.1'
+    implementation 'com.google.jimfs:jimfs:1.1'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
